@@ -1,0 +1,26 @@
+.book .row .image {
+  flex: 1 1 40rem;
+}
+
+.book .row form {
+  flex: 1 1 40rem;
+}
+
+.book .row form .inputBox {
+  padding: 0.5rem 0;
+}
+
+.book .row form .inputBox input {
+  width: 100%;
+  padding: 1rem;
+  border: 0.1rem solid var(--shadow);
+  font-size: 1.7rem;
+  color: var(--darkColor);
+  text-transform: none;
+}
+
+.book .row form .inputBox h3 {
+  font-size: 2rem;
+  padding: 1rem 0;
+  color: #666;
+}

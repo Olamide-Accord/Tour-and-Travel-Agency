@@ -1,0 +1,30 @@
+.footer{
+  background: var(--darkColor);
+}
+.footer .box-container{
+  gap: 1.5rem;
+}
+.footer .box-container .box{
+  flex: 1 1 25rem;
+  padding: 1rem 0;
+}
+.footer .box-container .box h3{
+  color: var(--white);
+  font-size: 2.5rem;
+  padding: 0.7rem 0;
+}
+.footer .box-container .box p{
+  font-size: 1.65rem;
+  color: #eee;
+  padding: 0.7rem 0;
+}
+.footer .box-container .box a{
+  display: block;
+  color: var(--white);
+  font-size: 2.25rem;
+  padding: 0.5rem 0;
+}
+.footer .box-container .box a:hover{
+  color: var(--orange);
+  text-decoration: underline;
+}

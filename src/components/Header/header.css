@@ -1,0 +1,45 @@
+/* HEADER */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--darkColor);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 9%;
+}
+
+nav .logo {
+  font-size: 2.5rem;
+  font-weight: bolder;
+  color: var(--white);
+  text-transform: uppercase;
+}
+
+nav .logo span {
+  color: var(--orange);
+}
+
+nav .navbar a {
+  color: var(--white);
+  font-size: 2rem;
+  margin: 0 0.8rem;
+}
+
+nav .navbar a:hover {
+  color: var(--orange);
+}
+
+nav .icons .icon {
+  font-size: 2.5rem;
+  color: var(--white);
+  cursor: pointer;
+  margin-right: 2rem;
+}
+
+nav .icons .icon:hover {
+  color: var(--orange);
+}
