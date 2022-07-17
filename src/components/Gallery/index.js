@@ -18,7 +18,7 @@ const Gallery = () => {
         {gallery.map((item) => {
           const {id, img} = item;
           return <div className="box" key={id}>
-            <img src={img} alt="" />
+            <img src={img} alt="beautiful places" />
             <div className="content">
               <h3>amazing places</h3>
               <p>

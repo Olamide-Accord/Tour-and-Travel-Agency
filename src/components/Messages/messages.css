@@ -1,0 +1,10 @@
+.messages {
+  background: var(--orange);
+  padding: 0.5rem 0;
+  text-align: center;
+  border-radius: 0.5rem;
+}
+.messages h6{
+  color: #fff;
+  font-size: 2rem;
+}

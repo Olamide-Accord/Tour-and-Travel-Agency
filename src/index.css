@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
-
 :root {
   --orange: #ffa500;
   --darkColor: #333;
@@ -7,7 +6,6 @@
   --white: #fff;
   --shadow: rgba(0, 0, 0, 0.1);
 }
-
 * {
   font-family: 'Nunito', sans-serif;
   margin: 0;
@@ -30,9 +28,22 @@ html {
   scroll-padding-top: 6rem;
   scroll-behavior: smooth;
 }
-
+.App#light{
+  background-color: var(--white);
+  color: #333;
+}
+.App#dark{
+  background-color: #111;
+  color: var(--white);
+}
+#light .box{
+  background-color: var(--white);
+}
+#dark .box{
+  background-color: #333;
+}
 section {
-  padding: 2rem 9%;
+  padding: 2rem 7%;
 }
 .heading {
   text-align: center;
@@ -89,8 +100,47 @@ form{
   box-shadow: 0 1rem 2rem var(--shadow);
   border-radius: 0.5rem;
 }
+.login-form-container {
+  z-index: 100;
+  min-height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login-form-container form {
+  margin: 2rem;
+  padding: 1.5rem 2rem 5rem;
+  border-radius: 0.5rem;
+  width: 50rem;
+}
+#light .login-form-container form{
+  background: #fff;
+}
+#dark .login-form-container form {
+  background: #333;
+}
+.login-form-container form h3 {
+  font-size: 3rem;
+  color: #444;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 1rem 0;
+}
+.login-form-container form .box {
+  width: 100%;
+  padding: 1.2rem;
+  font-size: 1.7rem;
+  margin: 0.6rem 0;
+  border: 0.1rem solid rgba(0, 0, 0, 0.3);
+  text-transform: none;
+}
+.login-form-container form .box:focus {
+  border-color: var(--orange);
+}
 
-@media (max-width: 991px) {
+@media (max-width: 1000px) {
   section, nav{
     padding: 2rem;
   }

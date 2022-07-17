@@ -19,8 +19,8 @@
 
 .packages .box-container .box .content h3 {
   font-size: 2rem;
-  color: var(--darkColor);
 }
+
 
 .packages .box-container .box .content h3 .icon {
   color: var(--orange);
@@ -29,8 +29,8 @@
 
 .packages .box-container .box .content p {
   font-size: 1.7rem;
-  color: #666;
   padding: 1rem 0;
+  color: #666;
 }
 
 .packages .box-container .box .content .stars .icon {
@@ -40,7 +40,6 @@
 
 .packages .box-container .box .content .price {
   font-size: 2rem;
-  color: var(--darkColor);
   padding-top: 1rem;
 }
 
@@ -48,4 +47,12 @@
   font-size: 1.5rem;
   color: #666;
   text-decoration: line-through;
+}
+
+#dark .packages h3, #dark .packages .price {
+  color: var(--white);
+}
+
+#light .packages h3, #light .packages .price {
+  color: var(--darkColor);
 }

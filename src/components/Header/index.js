@@ -1,21 +1,16 @@
-import React, { useState } from 'react';
-import { FaSearch, FaUser, FaBars, FaTimes } from "react-icons/fa/index";
-import {GrClose} from "react-icons/gr/index"
+import React from 'react';
+import {Link} from "react-router-dom"
+import { FaMoon, FaUser, FaBars, FaSun } from "react-icons/fa/index";
 import { useGlobalContext } from '../../context';
-import Home from "../Home";
-import Login from '../Login';
 import "./header.css"
 
 const Header = () => {
   const {
     navbar,
     toggleNavbar,
-    searchbar,
-    openSearchbar,
-    closeSearchbar,
-    login,
-    openLogin
-  } = useGlobalContext()
+    toggleTheme,
+    theme
+  } = useGlobalContext();
   return (
     <>
       <header>
@@ -23,13 +18,13 @@ const Header = () => {
           <div id="menu-bar" onClick={toggleNavbar}>
             <FaBars className="icon" />
           </div>
-          <a href="#" className="logo">
+          <Link to="/" className="logo">
             <span>T</span>
             ravel
-          </a>
+          </Link>
 
           <div className={`${navbar ? "navbar active" : "navbar"}`}>
-            <a href="#home">Home</a>
+            <Link to="/">Home</Link>
             <a href="#book">Book</a>
             <a href="#packages">Packages</a>
             <a href="#services">Services</a>
@@ -38,30 +33,17 @@ const Header = () => {
           </div>
 
           <div className="icons">
-            <FaSearch
-              className={`${searchbar ? "icon-none" : "icon"}`}
-              onClick={openSearchbar}
-            />
-            <FaTimes
-              className={`${searchbar ? "icon" : "icon-none"}`}
-              onClick={closeSearchbar}
-            />
-            <FaUser className="icon" onClick={openLogin} />
+            {theme === "light" ? (
+              <FaMoon className="icon" onClick={toggleTheme} />
+            ) : (
+              <FaSun className="icon" onClick={toggleTheme} />
+            )}
+            <Link to="login">
+              <FaUser className="icon" />
+            </Link>
           </div>
-
-          <form
-            className={`${
-              searchbar ? "search-bar-container active" : "search-bar-container"
-            }`}>
-            <input type="search" id="search-bar" placeholder="search here..." />
-            <label htmlFor="search-bar">
-              <FaSearch className="icon" />
-            </label>
-          </form>
         </nav>
       </header>
-      {login && <Login />}
-      <Home />
     </>
   );
 }

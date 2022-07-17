@@ -9,7 +9,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2rem 9%;
+  padding: 2rem 7%;
 }
 
 nav .logo {
@@ -39,12 +39,8 @@ nav .icons .icon {
   cursor: pointer;
   margin-right: 2rem;
 }
-
 nav .icons .icon:hover {
   color: var(--orange);
-}
-nav .icons .icon-none{
-  display: none;
 }
 
 /* MENU BAR */
@@ -55,45 +51,7 @@ nav .icons .icon-none{
   cursor: pointer;
   display: none;
   font-size: 2.5rem;
-  padding: 0.75rem 1rem;
-}
-
-/* SEARCH BAR */
-nav .search-bar-container {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  padding: 1.5rem 2rem;
-  background: #333;
-  border-top: 0.1rem solid rgba(255, 255, 255, .2);
-  display: flex;
-  align-items: center;
-  z-index: 1001;
-  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-}
-
-nav .search-bar-container.active {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-}
-
-nav .search-bar-container #search-bar {
-  width: 100%;
-  padding: 1rem;
-  text-transform: none;
-  color: #333;
-  font-size: 1.7rem;
-  border-radius: 0.5rem;
-}
-nav .search-bar-container label .icon{
-  color: #fff;
-  cursor: pointer;
-  font-size: 3rem;
-  margin-left: 1.5rem;
-}
-
-nav .search-bar-container label .icon:hover {
-  color: var(--orange);
+  padding: 0.75rem 1rem 0.35rem;
 }
 
 @media (max-width: 850px) {

@@ -22,5 +22,16 @@
 .book .row form .inputBox h3 {
   font-size: 2rem;
   padding: 1rem 0;
+}
+#light .book .row form{
+  background-color: var(--white);
+}
+#dark .book .row form{
+  background-color: #333;
+}
+#light .book .row form .inputBox h3{
   color: #666;
+}
+#dark .book .row form .inputBox h3{
+  color: var(--white);
 }

@@ -1,22 +1,24 @@
 import React from "react";
-import Book from "./components/Book";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-import Gallery from "./components/Gallery";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
-import Packages from "./components/Packages";
-import Services from "./components/Services"
+import { useGlobalContext } from "./context";
+import Home from "./pages/Home"
+import Login from "./pages/Login"
+import Signup from "./pages/Signup";
+
 
 function App() {
+  const {theme} = useGlobalContext()
   return (
-    <div className="App">
-      <Header/>
-      <Book/>
-      <Packages/>
-      <Services/>
-      <Gallery/>
-      <Contact/>
-      <Footer/>
+    <div className="App" id={theme}>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="login" element={<Login/>} />
+          <Route path="login/signup" element={<Signup/>}/>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

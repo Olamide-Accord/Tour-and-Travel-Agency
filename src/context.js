@@ -1,37 +1,78 @@
 import React, { createContext, useContext, useState } from 'react';
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  sendPasswordResetEmail,
+  signOut
+} from "firebase/auth";
+import {auth} from "./firebase"
 
 const AppContext = createContext();
 
 const AppProvider = ({children}) => {
   const [navbar, setNavbar] = useState(false);
-  const [searchbar, setSearchbar] = useState(false);
-  const [login, setLogin] = useState(false);
+  const [theme, setTheme] = useState("light");
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('');
+  const [message, setMessage] = useState("")
 
   const toggleNavbar = () => {
     setNavbar(!navbar)
   }
-  const openSearchbar = () => {
-    setSearchbar(true)
+
+  const signupSubmit = (e) => {
+    e.preventDefault();
+    createUserWithEmailAndPassword(auth, email, password)
+    .then(() => {
+      setEmail("");
+      setPassword("");
+      setMessage('Signup successful')
+    })
+    .catch(err => {
+      setMessage(err.message);
+    })
+  };
+
+  const loginSubmit = (e) => {
+    e.preventDefault();
+    signInWithEmailAndPassword(auth, email, password)
+      .then(() => {
+        setMessage("Login successful")
+        setEmail("");
+        setPassword("");
+      })
+      .catch(err => {
+        setMessage(err.message)
+      })
   }
-  const closeSearchbar = () => {
-    setSearchbar(false)
+
+  const resetPassword = () => {
+    sendPasswordResetEmail(auth, email)
+      .then(() => {
+        setMessage("Password reset link sent")
+      }).catch(err => {
+        setMessage(err.message)
+      })
   }
-  const openLogin = () => {
-    setLogin(true)
-  }
-  const closeLogin = () => {
-    setLogin(false)
-  }
+
+  const toggleTheme = () => {
+    setTheme((curr) => (curr === "light" ? "dark" : "light"));
+  };
+
   return (
     <AppContext.Provider value={{
       navbar,
       toggleNavbar,
-      searchbar,
-      openSearchbar,
-      closeSearchbar,
-      login,
-      openLogin,
-      closeLogin
+      theme,
+      toggleTheme,
+      email,
+      setEmail,
+      password,
+      setPassword,
+      loginSubmit,
+      signupSubmit,
+      resetPassword,
+      message
     }}>
       {children}
     </AppContext.Provider>

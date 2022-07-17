@@ -1,0 +1,36 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  position: relative;
+  z-index: 0;
+}
+
+.hero .content {
+  text-align: center;
+}
+
+.hero .content h3 {
+  font-size: 4.5rem;
+  color: var(--white);
+  text-transform: uppercase;
+  text-shadow: 0 0.3rem 0.5rem var(--shadow);
+}
+
+.hero .content p {
+  font-size: 2.5rem;
+  color: var(--white);
+  padding: 0.5rem 0;
+}
+
+.hero .video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
